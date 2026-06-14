@@ -1,0 +1,32 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+backend/*.sqlite3
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Vercel
+.vercel/
+frontend/.vercel/
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Logs and local scratch
+*.log
+.scratch/
+tmp/
