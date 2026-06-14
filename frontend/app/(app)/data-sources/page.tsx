@@ -3,7 +3,7 @@ import Link from "next/link";
 import { StatusBadge, type BadgeTone } from "@/components/status-badge";
 
 export const metadata: Metadata = {
-  title: "Data Sources — AI Workflow Dashboard",
+  title: "Data Sources — Prairie Signal Supply Co.",
 };
 
 type SyncStatus = "synced" | "warning" | "connectable";

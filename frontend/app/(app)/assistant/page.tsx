@@ -3,7 +3,7 @@ import { OperationsAssistant } from "@/components/operations-assistant";
 import { StatusBadge } from "@/components/status-badge";
 
 export const metadata: Metadata = {
-  title: "Assistant — AI Workflow Dashboard",
+  title: "Assistant — Prairie Signal Supply Co.",
 };
 
 export default function AssistantPage() {

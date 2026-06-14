@@ -4,7 +4,7 @@ import { ReportHistoryItem } from "@/components/report-card";
 import { getReportHistory } from "@/lib/get-reports";
 
 export const metadata: Metadata = {
-  title: "Reports — AI Workflow Dashboard",
+  title: "Reports — Prairie Signal Supply Co.",
 };
 
 export const dynamic = "force-dynamic";

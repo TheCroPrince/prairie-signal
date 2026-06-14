@@ -19,10 +19,12 @@ const splineMono = Spline_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Workflow Dashboard — Prairie Signal Supply Co.",
+  title: "Prairie Signal Supply Co. — AI Workflow Dashboard",
   description:
     "A product-style demo that turns scattered business data into daily summaries, priority alerts, and next-step visibility for small business teams.",
-  // Keeping the demo out of search indexes until it's deployed and stable
+  // Demo subdomain — intentionally kept out of search indexes. The portfolio
+  // case study at armatir.com/projects/prairie-signal-supply-co is the
+  // indexable, canonical entry point for this work.
   robots: { index: false, follow: false },
 };
 

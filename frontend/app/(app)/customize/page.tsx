@@ -4,7 +4,7 @@ import { AppearancePlayground } from "@/components/appearance-playground";
 import { CustomizeExplorer } from "@/components/customize-explorer";
 
 export const metadata: Metadata = {
-  title: "Customize — AI Workflow Dashboard",
+  title: "Customize — Prairie Signal Supply Co.",
 };
 
 const reportStyles = [

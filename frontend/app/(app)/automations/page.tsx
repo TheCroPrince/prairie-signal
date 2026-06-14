@@ -4,7 +4,7 @@ import { ThresholdRulesPanel } from "@/components/threshold-rules";
 import { getAutomations } from "@/lib/get-automations";
 
 export const metadata: Metadata = {
-  title: "Automations — AI Workflow Dashboard",
+  title: "Automations — Prairie Signal Supply Co.",
 };
 
 export const dynamic = "force-dynamic";

@@ -8,7 +8,7 @@ import { SourceSyncCard } from "@/components/source-sync-card";
 import { getDashboardPayload } from "@/lib/get-dashboard";
 
 export const metadata: Metadata = {
-  title: "Dashboard — AI Workflow Dashboard",
+  title: "Dashboard — Prairie Signal Supply Co.",
 };
 
 // Always render per-request so the payload reflects the live API
