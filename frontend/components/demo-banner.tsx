@@ -1,9 +1,18 @@
+import { ArmatirWordmark, ReturnToArmatir } from "@/components/armatir-brand";
+import { ARMATIR_HOME } from "@/lib/armatir";
+
 export function DemoBanner() {
   return (
-    <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 border-b border-line bg-panel px-4 py-1.5 text-center font-mono text-[0.6875rem] tracking-wide text-fg-3">
-      <span className="text-watch">Demo environment</span>
-      <span aria-hidden>·</span>
-      <span>seeded operational data — built to show how real tools could be connected</span>
-    </p>
+    <div className="flex items-center justify-between gap-3 border-b border-line bg-panel px-4 py-1.5 sm:px-6">
+      <ArmatirWordmark href={ARMATIR_HOME} label="product demo" markClassName="size-4" />
+
+      <p className="hidden flex-1 justify-center gap-x-2 text-center font-mono text-[0.6875rem] tracking-wide text-fg-3 sm:flex">
+        <span className="text-watch">Demo environment</span>
+        <span aria-hidden>·</span>
+        <span>seeded operational data</span>
+      </p>
+
+      <ReturnToArmatir variant="link" />
+    </div>
   );
 }

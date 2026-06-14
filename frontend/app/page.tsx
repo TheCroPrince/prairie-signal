@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { ArmatirWordmark, ReturnToArmatir } from "@/components/armatir-brand";
 import { HeroBrandPicker } from "@/components/hero-brand-picker";
 import { MiniDashboard } from "@/components/mini-dashboard";
 import { StatusBadge } from "@/components/status-badge";
+import { ARMATIR_HOME } from "@/lib/armatir";
 
 const beforeTimeline = [
   { time: "7:55 AM", step: "Maya opens the order spreadsheet." },
@@ -61,16 +63,17 @@ const businessTypes = [
 export default function LandingPage() {
   return (
     <div className="atmosphere min-h-screen">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
-        <p className="font-mono text-xs tracking-wider text-fg-3 uppercase">
-          Armatir <span className="text-fg-2">/</span> product demo
-        </p>
-        <Link
-          href="/dashboard"
-          className="rounded-lg border border-line px-3.5 py-1.5 text-sm text-fg-2 transition-colors hover:border-line-2 hover:text-fg"
-        >
-          Open demo
-        </Link>
+      <header className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-5 sm:px-6">
+        <ArmatirWordmark href={ARMATIR_HOME} label="product demo" markClassName="size-5" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ReturnToArmatir variant="link" className="hidden sm:inline-flex" />
+          <Link
+            href="/dashboard"
+            className="rounded-lg border border-line px-3.5 py-1.5 text-sm text-fg-2 transition-colors hover:border-line-2 hover:text-fg"
+          >
+            Open demo
+          </Link>
+        </div>
       </header>
 
       <main className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -216,12 +219,15 @@ export default function LandingPage() {
       </main>
 
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-6 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 sm:px-6">
           <p className="max-w-xl text-xs leading-relaxed text-fg-3">
             Demo environment using seeded operational data. Built to show how this system can
             connect to real tools such as CRM, payments, analytics, and internal databases.
           </p>
-          <p className="font-mono text-[0.6875rem] text-fg-3">An Armatir product demo</p>
+          <div className="flex shrink-0 items-center gap-4">
+            <ArmatirWordmark href={ARMATIR_HOME} label="product demo" markClassName="size-4" />
+            <ReturnToArmatir variant="link" />
+          </div>
         </div>
       </footer>
     </div>
