@@ -177,6 +177,23 @@ body {
   z-index: 1;
 }
 
+/* Sticky/fixed app chrome. Defined after `.atmosphere > *` so these win on
+   source order — otherwise that rule's `position: relative` would clobber the
+   sticky top bar and the fixed bottom tab bar (both direct children of
+   `.atmosphere`). */
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.app-bottom-nav {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 40;
+}
+
 .panel {
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--color-panel-2) 70%, transparent), transparent 40%),
