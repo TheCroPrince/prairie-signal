@@ -1,3 +1,4 @@
+import { getBackendBaseUrl } from "./backend-proxy";
 import { getDemoReportHistory } from "./demo-engine";
 import type { StructuredReport } from "./types";
 
@@ -7,7 +8,7 @@ export type ReportsResult = {
 };
 
 export async function getReportHistory(): Promise<ReportsResult> {
-  const base = process.env.AI_BACKEND_URL?.trim();
+  const base = getBackendBaseUrl();
   if (base) {
     try {
       const res = await fetch(`${base}/reports`, {

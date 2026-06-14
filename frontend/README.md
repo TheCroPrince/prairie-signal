@@ -11,7 +11,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-The app runs without a backend by using deterministic demo-mode responses in its route handlers. Set `AI_BACKEND_URL` only when you want those handlers to proxy to the optional FastAPI service.
+The app runs without a backend by using deterministic demo-mode responses in its route handlers. In Vercel Services it can use the generated `BACKEND_URL`; set `AI_BACKEND_URL` only when you want to override that with another FastAPI URL.
 
 ## Scripts
 
@@ -25,4 +25,4 @@ npm run type-check
 
 ## Vercel
 
-Deploy this folder as the Vercel project root. `vercel.json` defines the frontend install, build, and dev commands.
+Deploy from the repository root with Vercel's Services framework preset. The root `vercel.json` maps this folder to `/`.

@@ -1,3 +1,7 @@
+export function getBackendBaseUrl(): string | null {
+  return process.env.AI_BACKEND_URL?.trim() || process.env.BACKEND_URL?.trim() || null;
+}
+
 export function parseJsonBody(body: string): unknown {
   try {
     return JSON.parse(body);
@@ -7,7 +11,7 @@ export function parseJsonBody(body: string): unknown {
 }
 
 export async function proxyBackendPost(path: string, body: string): Promise<Response | null> {
-  const base = process.env.AI_BACKEND_URL?.trim();
+  const base = getBackendBaseUrl();
   if (!base) return null;
 
   try {
@@ -37,4 +41,3 @@ export function demoJson(data: unknown): Response {
     },
   });
 }
-

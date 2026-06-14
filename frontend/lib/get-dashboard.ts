@@ -1,3 +1,4 @@
+import { getBackendBaseUrl } from "./backend-proxy";
 import { getDemoDashboardPayload } from "./demo-engine";
 import type { DashboardPayload } from "./types";
 
@@ -11,7 +12,7 @@ export type DashboardResult = {
 // is unreachable (or AI_BACKEND_URL is unset) the dashboard degrades to the
 // bundled seed snapshot so the demo never renders broken.
 export async function getDashboardPayload(): Promise<DashboardResult> {
-  const base = process.env.AI_BACKEND_URL?.trim();
+  const base = getBackendBaseUrl();
   if (base) {
     try {
       const res = await fetch(`${base}/dashboard/today`, {

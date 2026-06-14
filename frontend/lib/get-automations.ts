@@ -1,3 +1,4 @@
+import { getBackendBaseUrl } from "./backend-proxy";
 import { getDemoAutomations } from "./demo-engine";
 import type { AutomationsPayload } from "./types";
 
@@ -7,7 +8,7 @@ export type AutomationsResult = {
 };
 
 export async function getAutomations(): Promise<AutomationsResult> {
-  const base = process.env.AI_BACKEND_URL?.trim();
+  const base = getBackendBaseUrl();
   if (base) {
     try {
       const res = await fetch(`${base}/automations`, {

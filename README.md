@@ -2,7 +2,7 @@
 
 A standalone custom dashboard demo for small businesses. Prairie Signal Supply Co. is a fictional B2B supply and field-service company used to show how a custom dashboard can turn scattered operational data into daily summaries, priority queues, reports, automation previews, and source-backed answers.
 
-The demo is designed to run as a shareable Next.js preview without any external services. A Python FastAPI backend is included as an optional local service, but the Next.js app has deterministic demo-mode fallbacks for all interactive flows.
+The demo is designed to run as a shareable Vercel preview with a Next.js frontend and FastAPI backend in one project. The Next.js app also has deterministic demo-mode fallbacks, so the dashboard still works if the backend is unavailable.
 
 ## What It Shows
 
@@ -32,7 +32,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-If `AI_BACKEND_URL` is blank or unreachable, the Next.js route handlers fall back to the bundled demo logic for assistant responses, report generation, automation previews, and rule saves.
+If `AI_BACKEND_URL` and Vercel's generated `BACKEND_URL` are blank or unreachable, the Next.js route handlers fall back to the bundled demo logic for assistant responses, report generation, automation previews, and rule saves.
 
 ## Optional FastAPI Backend
 
@@ -57,7 +57,7 @@ cd frontend
 copy .env.example .env.local
 ```
 
-`AI_BACKEND_URL` is optional and server-side only. Leave it blank for the built-in demo mode, or set it to a deployed FastAPI URL if you host the backend separately.
+`AI_BACKEND_URL` is optional and server-side only. Leave it blank for the built-in demo mode or for Vercel Services, where Vercel provides `BACKEND_URL` automatically for the backend service.
 
 Backend:
 
@@ -70,15 +70,15 @@ Set `ALLOWED_ORIGINS` to the frontend URL if the backend is deployed separately.
 
 ## Vercel Preview Deployment
 
-Use a single Vercel project for the Next.js app:
+Use a single Vercel project with the Services framework preset:
 
 1. Import the GitHub repository into Vercel.
-2. Set the Vercel Project Root Directory to `frontend`.
-3. Keep the Framework Preset as `Next.js`.
+2. Keep the Vercel Project Root Directory at the repository root.
+3. Set the Framework Preset to `Services`.
 4. No environment variables are required for a preview deployment.
-5. Optionally set `AI_BACKEND_URL` in Vercel if a hosted backend is available.
+5. Optionally set `AI_BACKEND_URL` only if you want to override the generated `BACKEND_URL`.
 
-The committed `frontend/vercel.json` sets the install, build, and dev commands for the frontend project. Preview deployments are created from Git branches and pull requests through the normal Vercel Git workflow.
+The root `vercel.json` defines `frontend` at `/` and `backend` at `/backend`. Preview deployments are created from Git branches and pull requests through the normal Vercel Git workflow.
 
 ## Public Demo Notes
 
